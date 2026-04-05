@@ -5,6 +5,10 @@ import {BrowserRouter, Routes, Route, Link, Outlet} from "react-router-dom"
 import Not_found from './components/Not_found'
 import Products from './components/DanhSachSanPham/Products'
 import ProductDetail from './components/DanhSachSanPham/ProductDetail'
+import Dashboard from './components/dashboard_cau4/Dashboard'
+import Order from './components/dashboard_cau4/Order'
+import Profile from './components/dashboard_cau4/Profile'
+import Setting from './components/dashboard_cau4/Setting'
 
 function App() {
 
@@ -18,9 +22,11 @@ function App() {
       <Link to="/about">ABOUT</Link> |
 
       {/* Cau2 */}
-      <Link to="/abc">Link sai</Link> | 
+      <Link to="/abc">Link 404</Link> | 
       {/* Cau 3 */}
-      <Link to="/products">Product List</Link>
+      <Link to="/products">Product List</Link> | 
+      {/* cau 4 */}
+      <Link to="/dashboard">Dashboard</Link>
     </nav>
 
 
@@ -35,6 +41,14 @@ function App() {
       {/* Cau 3 */}
       <Route path='/products' element={<Products/>}></Route>
       <Route path='/products/:id' element={<ProductDetail/>}></Route>
+
+      {/* cau 4 */}
+      <Route path='/dashboard' element={<Dashboard/>}>
+        <Route path="oder" element={<Order/>}></Route>
+        <Route path="profile" element={<Profile/>}></Route>
+        <Route path="setting" element={<Setting/>}></Route>
+      </Route>
+
 
     </Routes>
     
