@@ -9,6 +9,8 @@ import Dashboard from './components/dashboard_cau4/Dashboard'
 import Order from './components/dashboard_cau4/Order'
 import Profile from './components/dashboard_cau4/Profile'
 import Setting from './components/dashboard_cau4/Setting'
+import Checkout from './components/checkout_cau5/Checkout'
+import ProductDetail_cau5 from './components/checkout_cau5/ProductDetail_cau5'
 
 function App() {
 
@@ -40,7 +42,7 @@ function App() {
 
       {/* Cau 3 */}
       <Route path='/products' element={<Products/>}></Route>
-      <Route path='/products/:id' element={<ProductDetail/>}></Route>
+      {/* <Route path='/products/:id' element={<ProductDetail/>}></Route> */}
 
       {/* cau 4 */}
       <Route path='/dashboard' element={<Dashboard/>}>
@@ -48,6 +50,11 @@ function App() {
         <Route path="profile" element={<Profile/>}></Route>
         <Route path="setting" element={<Setting/>}></Route>
       </Route>
+      {/* cau 5 */}
+      
+        <Route path="/products/:id" element={<ProductDetail_cau5 />} />
+        <Route path="/checkout" element={<Checkout />} />
+      
 
 
     </Routes>

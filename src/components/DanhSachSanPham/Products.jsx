@@ -16,8 +16,8 @@ function Products() {
       <h3>Danh sách sản phẩm</h3>
       <ul>
         {productList.map(sp=>(
-        <li>
-          <Link to={`/products/${sp.id}`} key={sp.id}>{sp.name}</Link>
+        <li key={sp.id}>
+          <Link to={`/products/${sp.id}`} >{sp.name}</Link>
         </li>
       ))}
       </ul>
