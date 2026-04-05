@@ -4,32 +4,45 @@ import About from './components/About'
 import {BrowserRouter, Routes, Route, Link, Outlet} from "react-router-dom"
 import Not_found from './components/Not_found'
 import Products from './components/DanhSachSanPham/Products'
-import ProductItem from "./components/DanhSachSanPham/ProductItem"
+import ProductDetail from './components/DanhSachSanPham/ProductDetail'
 
 function App() {
 
   return (
     <>
+    <BrowserRouter>
     
-      <BrowserRouter>
-      <nav>
-        <Link to="/">Home </Link> |
-        <Link to="/about">About </Link> |
-        <Link to="/contact">Contact </Link>
-        <Link to="/products">Products</Link>
-      </nav>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="*" element={<Not_found/>}/>
-        
-          <Route path="/products" element={<Products/>}>
-          <Route path="/products:id" element={ProductItem}/>
+    <nav>
+      <Link to="/">HOME</Link> | 
+      <Link to="/contact">CONTACT</Link> | 
+      <Link to="/about">ABOUT</Link> |
 
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      {/* Cau2 */}
+      <Link to="/abc">Link sai</Link> | 
+      {/* Cau 3 */}
+      <Link to="/products">Product List</Link>
+    </nav>
+
+
+    <Routes>
+      <Route path="/" element={<Home/>}></Route>
+      <Route path="/about" element={<About/>}></Route>
+      <Route path="/contact" element={<Contact/>}></Route>
+
+      {/* Cau 2 */}
+      <Route path='*' element={<Not_found/>}></Route>
+
+      {/* Cau 3 */}
+      <Route path='/products' element={<Products/>}></Route>
+      <Route path='/products/:id' element={<ProductDetail/>}></Route>
+
+    </Routes>
+    
+    
+    
+    </BrowserRouter>
+    
+      
     </>
   )
 }
